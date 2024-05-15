@@ -18,11 +18,11 @@
   ],
   "scripts": {
     "build": "tsc",
-    "postversion": "yarn build"
+    "postversion": "npm build"
   },
   "peerDependencies": {
-    "react": ">=16.11.0",
-    "react-native": ">=0.61.3"
+    "react": ">=18.2.0",
+    "react-native": ">=0.73.0"
   },
   "files": [
     "dist",
@@ -36,11 +36,10 @@
   },
   "homepage": "https://github.com/jobtoday/react-native-image-viewing#readme",
   "devDependencies": {
-    "@babel/runtime": "7.7.4",
-    "@types/react": "16.9.13",
-    "@types/react-native": "0.60.23",
-    "react": "16.12.0",
-    "react-native": "0.61.5",
-    "typescript": "3.7.2"
+    "@babel/runtime": "*",
+    "@types/react": "^18.2.6",
+    "react": "18.2.0",
+    "react-native": "0.74.1",
+    "typescript": "5.0.4"
   }
 }

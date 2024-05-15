@@ -35,23 +35,19 @@ const useImageDimensions = (image: ImageSource): Dimensions | null => {
         return;
       }
 
-      // @ts-ignore
       if (image.uri) {
         const source = image as ImageURISource;
-
-        const cacheKey = source.uri as string;
-
-        const imageDimensions = imageDimensionsCache.get(cacheKey);
+        const imageUri = source.uri as string;
+        const imageDimensions = imageDimensionsCache.get(imageUri);
 
         if (imageDimensions) {
           resolve(imageDimensions);
         } else {
-          // @ts-ignore
           Image.getSizeWithHeaders(
-            source.uri,
-            source.headers,
+            imageUri,
+            source.headers || {},
             (width: number, height: number) => {
-              imageDimensionsCache.set(cacheKey, { width, height });
+              imageDimensionsCache.set(imageUri, { width, height });
               resolve({ width, height });
             },
             () => {
